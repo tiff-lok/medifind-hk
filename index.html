@@ -266,8 +266,8 @@ const SUPABASE_KEY = 'sb_publishable_S-kx1TfJy4Mv-yyoiV8_bg_y2rQ4yua';
 
 const LANG = { current: 'en' };
 const TEXT = {
-  en: { sub:'Hong Kong · GPs & Mental Health', placeholder:'Doctor, clinic or district…', navSearch:'Search', navMap:'Map', navSaved:'Saved', navMe:'Profile', back:'Back', found: n=>`${n} doctors found`, noResults:'No doctors match this filter.' },
-  tc: { sub:'香港 · 普通科及精神健康', placeholder:'搜尋醫生、診所或地區…', navSearch:'搜尋', navMap:'地圖', navSaved:'收藏', navMe:'我的', back:'返回', found: n=>`找到 ${n} 位醫生`, noResults:'找不到符合條件的醫生。' }
+  en: { sub:'Hong Kong · GPs & Mental Health', placeholder:'Doctor, clinic or district…', navSearch:'Search', navMap:'Map', navSaved:'Saved', navMe:'Profile', back:'Back', found: n=>`${n} doctors found`, noResults:'No doctors match this filter.', chips: { All:'All', MH:'Mental Health', Can:'Cantonese', Eng:'English', Man:'Mandarin', Child:'Children', Eld:'Elderly' } },
+  tc: { sub:'香港 · 普通科及精神健康', placeholder:'搜尋醫生、診所或地區…', navSearch:'搜尋', navMap:'地圖', navSaved:'收藏', navMe:'我的', back:'返回', found: n=>`找到 ${n} 位醫生`, noResults:'找不到符合條件的醫生。', chips: { All:'全部', MH:'精神健康', Can:'廣東話', Eng:'英語', Man:'普通話', Child:'兒童', Eld:'長者' } }
 };
 
 let allDoctors = [];
@@ -525,6 +525,14 @@ function toggleLang() {
   document.getElementById('nav-saved').textContent      = t.navSaved;
   document.getElementById('nav-me').textContent         = t.navMe;
   document.getElementById('back-label').textContent     = t.back;
+  const chips = t.chips;
+  document.getElementById('chip-All').textContent   = chips.All;
+  document.getElementById('chip-MH').textContent    = chips.MH;
+  document.getElementById('chip-Can').textContent   = chips.Can;
+  document.getElementById('chip-Eng').textContent   = chips.Eng;
+  document.getElementById('chip-Man').textContent   = chips.Man;
+  document.getElementById('chip-Child').textContent = chips.Child;
+  document.getElementById('chip-Eld').textContent   = chips.Eld;
   applyFilters();
 }
 
